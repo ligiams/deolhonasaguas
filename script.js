@@ -114,6 +114,13 @@ transparent: true,
 interactive: true
     })//.addTo(map)//;
 
+var r_abast = L.tileLayer.wms("http://ec2-3-135-187-150.us-east-2.compute.amazonaws.com:8080/geoserver/aws_rds_teste1/wms/", {
+layers: 'aws_rds_teste1:regioes_abast',
+format: 'image/png',
+transparent: true,
+interactive: true
+    })//.addTo(map)//;
+
 //Esse só abre da minha máquina, já que está no Geosever no localhost//
 var mun_local = L.tileLayer.wms("http://localhost:8080/geoserver/ws1/wms/", {
 layers: 'ws1:mun_local',
@@ -221,6 +228,7 @@ var overlayMaps = {
     "UFs (aws+geoserver)": ufs,
     "Mun (aws+geoserver)": mun,
     "Mun (localhost)": mun_local,
+    "Regiões de abastecimento":r_abast,
     "ETEs (aws+geoserver)": etes,
     //"ETEs WFS (aws+geoserver)": etes_wfs, 
     "ICTEM (wms datageo)": ictem,
