@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Nossa página</title>
+<link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+	<h1>Início</h1>
+	<div id="batata" class="centralizado azul">Algum texto</div>
+	<div id="cleyton" class="centralizado vermelho">Outro texto
+		<div id="dagmar" class="vermelho">Mais texto ainda
+			<span>Estou dentro do span</span>
+		</div>
+	</div>
+	<script>
+	var divs = document.getElementsByTagName("div");
+	
+	for(var i = 0; i < divs.length; i ++){
+		divs[i].onclick = mudaCor;
+	}
+	
+	function mudaCor(e){
+		if(e.target.classList.contains("azul"))
+		{
+			e.target.classList.remove("azul");
+			e.target.classList.add("vermelho");
+		}
+		else if(e.target.classList.contains("vermelho"))
+		{
+			e.target.classList.remove("vermelho");
+			e.target.classList.add("verde");
+		}
+		else if(e.target.classList.contains("verde"))
+		{
+			e.target.classList.remove("verde");
+			e.target.classList.add("azul");
+		}
+	}
+	</script>
+</body>
+</html>
